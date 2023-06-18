@@ -1,0 +1,38 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h4>Новий учасник</h4>
+    <form method="post">
+         {% csrf_token %}
+        {{ form.Name }}<br>
+        {{ form.Age }}<br>
+        {{ form.Gender }}<br>
+        <label>Рівень освіти</label>
+        {{ form.EducationLevel }}<br>
+        {{ form.ServiceDuration }}<br>
+        <label>Звання</label>
+        {{ form.rank }}<br>
+        <label>Спеціалізація</label>
+        {{ form.specialization }}<br>
+{#        <select class="form-select" name="rank" aria-label="Default select example">#}
+{#  <option selected>Звання</option>#}
+{#            {% for el in ranks %}#}
+{#  <option value="{{ el.id }}">{{el.Rank}}</option>#}
+{#            {% endfor%}#}
+{#</select><br>#}
+{#        <select class="form-select" name="specialization" aria-label="Default select example">#}
+{#  <option selected>Спеціалізація</option>#}
+{#            {% for el in specializations %}#}
+{#  <option value="{{ el.id }}">{{el.Specialization}}</option>#}
+{#            {% endfor%}#}
+{#</select><br>#}
+        <button type="submit" class="btn btn-success">Додати</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

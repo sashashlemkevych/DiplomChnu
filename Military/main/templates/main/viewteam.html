@@ -1,0 +1,46 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+<h4>Завдання які виконують команди</h4>
+    <form action="" method="post">
+    {% csrf_token %}
+<table class="table">
+  <thead>
+    <tr>
+{#      <th scope="col">Позивні</th>#}
+      <th scope="col">Завдання</th>
+        <th scope="col">Вибрано</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for el in tasks%}
+<tr>
+{#    <td>{{el.soldier}}</td>#}
+    <td>{{ el }}</td>
+
+    <td>
+        {% if el %}
+        <div class="input-group-append">
+           <a href="{% url 'taskdeteil' id=el.id %}" class="btn btn-outline-primary" type="submit">Деталі</a>
+        </div>
+        {% endif%}
+
+
+{% endfor%}
+
+    </tr>
+      </tbody>
+    </table>
+
+
+{#<div class="input-group-append">#}
+{#     <button class="btn btn-outline-secondary" type="submit">Аналіз успішність</button>#}
+{#        </div>#}
+    </form>
+{% endblock %}

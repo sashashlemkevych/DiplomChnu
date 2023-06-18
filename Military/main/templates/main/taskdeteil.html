@@ -1,0 +1,36 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+<h4>Деталі завдання</h4>
+    <form action="" method="post">
+    {% csrf_token %}
+        <div class="fs-5"> Завдання: {{ task.TaskType }}, Складність: {{ task.DifficultyLevel }}, Місце проведення: {{ task.Location }}, Транспорт який використовується: {{ task.Transport }}</div>
+
+  <p>
+{#  <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">#}
+{#      Завдання: {{ task.TaskType }}#}
+{#  </button>#}
+</p>
+{#<div class="collapse" id="collapseExample">#}
+  <div class="card card-body">
+  Список гравців:<p></p>
+      {% for el in soldiers %}
+
+      {{ el.Name }}<p></p>
+        {% endfor %}
+    </div>
+{#</div>#}
+{#            <p>#}
+{#            <button class="btn btn-primary">Аналіз успішності</button>#}
+{#            </p>#}
+
+
+    <label> Успішність виконання завдання : {{ result }} %</label>
+    </form>
+{% endblock %}

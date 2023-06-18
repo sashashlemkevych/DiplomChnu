@@ -1,0 +1,53 @@
+{%extends 'main/base.html'%}
+{% load static %}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <!-- START THE FEATURETTES -->
+    <div class="row featurette">
+      <div class="col-md-7 ">
+        <h2 class="featurette-heading fw-normal lh-1 text-center" style="margin-top: 100px;">Про сайт <span class="text-body-secondary"></span></h2>
+        <p class="lead text-center">Сайт використовується для створення команд,а також для підбору гравців які будуть виконувати завдання і в подальшому для аналізу успішності виконання поставленої задачі.</p>
+      </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/4.jpg' %}" width="500" height="500" alt="Placeholder: 500x500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 80px;">Страйкбол. <span class="text-body-secondary">Загартуй характер.</span></h2>
+        <p class="lead">Командна гра, у якій «бій» ведеться 6 мм кульками типу BB (вагою від 0,12 до 0,43 г) з точних копій бойової зброї.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/5.jpg' %}" width="500" height="500" alt="Placeholder: 500x500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1" style="margin-top: 100px;">Місця проведення та легенди.<span class="text-body-secondary"></span></h2>
+        <p class="lead">Ігри проводяться за заздалегідь обговореними сценаріями, які додають ще більшої реалістичності самій грі. Прикладом таких сценаріїв є захист блокпосту, або напад на нарколабораторію, коли на території твоїх дій ще є група партизанів.
+    </div>
+      <div class="col-md-5">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{% static 'images/2.jpg' %}" width="500" height="500" alt="Placeholder: 500x500">
+      </div>
+    </div>
+<p></p>
+
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+</main>
+{% endblock %}

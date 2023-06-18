@@ -1,0 +1,44 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h4>Нове Завдання</h4>
+    <form method="post">
+         {% csrf_token %}
+        <label>Завдання</label>
+        {{ form.TaskType }}<br>
+        <label>Складність</label>
+        {{ form.DifficultyLevel }}<br>
+        {{ form.Duration }}<br>
+        {{ form.Date }}<br>
+        {{ form.StartTime }}<br>
+        {{ form.EndTime }}<br>
+        <label>Місце проведення</label>
+        {{ form.Location }}<br>
+        <label>Погода</label>
+        {{ form.WeatherConditions }}<br>
+        {{ form.Temperature }}<br>
+        {{ form.Distance }}<br>
+        <label>Транспорт</label>
+        {{ form.Transport }}<br>
+{#        <select class="form-select" name="DifficultLevel" aria-label="Default select example">#}
+{#  <option selected>Складність</option>#}
+{#            {% for el in difficultylevels %}#}
+{#  <option value="{{ el.id }}">{{el.DifficultyLevel}}</option>#}
+{#            {% endfor%}#}
+{#</select><br>#}
+{#        <select class="form-select" name="Transport" aria-label="Default select example">#}
+{#  <option selected>Транспорт</option>#}
+{#            {% for el in transports %}#}
+{#  <option value="{{ el.id }}">{{el.Transport}}</option>#}
+{#            {% endfor%}#}
+{#</select><br>#}
+        <button type="submit" class="btn btn-success">Додати</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

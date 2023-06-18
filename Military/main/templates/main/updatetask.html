@@ -1,0 +1,27 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h4>Оновити дані</h4>
+    <form method="post">
+         {% csrf_token %}
+        {{ form.TaskType }}<br>
+        {{ form.DifficultyLevel }}<br>
+        {{ form.Duration }}<br>
+        {{ form.Date }}<br>
+        {{ form.StartTime }}<br>
+        {{ form.EndTime }}<br>
+        {{ form.Location }}<br>
+        {{ form.WeatherConditions }}<br>
+        {{ form.Temperature }}<br>
+        {{ form.Distance }}<br>
+        {{ form.Transport }}<br>
+        <button type="submit" class="btn btn-success">Оновити</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{%extends 'main/base.html'%}
+
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h4>Оновити дані</h4>
+    <form method="post">
+         {% csrf_token %}
+        {{ form.Name }}<br>
+        {{ form.Age }}<br>
+        {{ form.Gender }}<br>
+        {{ form.EducationLevel }}<br>
+        {{ form.ServiceDuration }}<br>
+        {{ form.rank }}<br>
+        {{ form.specialization }}<br>
+        <button type="submit" class="btn btn-success">Оновити</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
